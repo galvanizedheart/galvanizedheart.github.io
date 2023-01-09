@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/jquery-3.5.1.min.js"></script>
+    <script src="script/script.js"></script>
+    <link rel="shortcut icon" href="style/favicon.png" type="image/x-icon">
+    <title>Posso andare al mare?</title>
+</head>
+
+<body>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Info aggiuntive</h2>
+            <a class="close" onclick="closeit()">&times;</a>
+            <div class="content">
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Posso andare al mare? <sup style="font-size: small;">Beta</sup></h1>
+        <button id="menubut">Menu</button>
+        <nav>
+            <li class="dropdown">
+                <button class="dropbtn" id="locale">Località</button>
+                <div class="dropdown-content">
+                    <a onclick="main(41.73,12.28,'Lido di Ostia')" class="nav">Lido di Ostia</a>
+                    <a onclick="main(41.62,12.46,'Torvaianica')" class="nav">Torvaianica</a>
+                    <a onclick="main(41.45,12.62,'Nettuno')" class="nav">Nettuno</a>
+                    <a onclick="main(41.29,13.24,'Terracina')" class="nav">Terracina</a>
+                    <a onclick="main(41.30,13.03,'Sabaudia')" class="nav">Sabaudia</a>
+                    <a onclick="main(41.47,12.90,'Ardea')" class="nav">Ardea</a>
+                    <a onclick="main(41.88,12.22,'Maccarese')" class="nav">Maccarese</a>
+                    <a onclick="main(41.26,13.43,'Sperlonga')" class="nav">Sperlonga</a>
+                    <a onclick="main(41.85,12.20,'Fregene')" class="nav">Fregene</a>
+                    <a onclick="main(42.03,11.85,'Santa Marinella')" class="nav">Santa Marinella</a>
+                </div>
+            </li>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='about.html'">About</button>
+        </nav>
+    </header>
+    <main>
+
+        <div id="season">
+
+            <p>Siamo in:</p>
+
+            <p id="seas"></p>
+        </div>
+        <article id="1">
+
+        </article>
+        <div id="week">
+            <article id="2">
+
+            </article>
+            <article id="3">
+
+            </article>
+            <article id="4">
+
+            </article>
+            <article id="5">
+
+            </article>
+            <article id="6">
+
+            </article>
+            <article id="7">
+
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>Powered by <a href="https://open-meteo.com">Open-Meteo.com</a>
+        </p>
+    </footer>
+</body>
+<script>
+    var open=0,button=document.getElementById("menubut");button.addEventListener("click",function(){1==open?(document.getElementsByTagName("nav")[0].style.display="none",open=0):(document.getElementsByTagName("nav")[0].style.display="flex",open=1)});
+</script>
+
+</html>
