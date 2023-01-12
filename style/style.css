@@ -4,6 +4,7 @@ body {
     font-family: 'Sofia Sans', sans-serif;
     background-color: black;
     background-image: url('../img/pattern.png');
+    background-attachment: fixed;
 }
 
 .stylish {
@@ -23,7 +24,7 @@ body {
 }
 
 .stylish hr {
-    max-width: 85%;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -59,4 +60,102 @@ nav button:hover {
     box-shadow: 0 0px 20px 0px dimgray;
     max-width: 860px;
     padding: 20px;
+}
+
+.a {
+    margin: 8vh auto;
+    max-width: 750px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.a p {
+    text-align: justify;
+}
+
+.a:hover {
+    transform: scale(1.025);
+    transition: 0.25s;
+    box-shadow: 0 0px 30px 0px dimgray;
+}
+
+.m p {
+    max-width: 85%;
+    margin: 1em auto;
+}
+
+.sep {
+    margin: -20px auto;
+    font-size: xx-large;
+    padding: 1px;
+    background-image: linear-gradient(to top, black, #2f4f4f, black);
+}
+
+.sep p {
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.date {
+    text-align: right !important;
+    font-size: smaller;
+}
+
+.proj {
+    width: 250px;
+    max-height: 500px;
+    margin: auto;
+    flex: 0 0 40%;
+    margin: 20px auto;
+    background-image: linear-gradient(to bottom left, darkslategrey, 1%, black);
+    /*background-image: none;*/
+    /*background-color: black;*/
+    box-shadow: 0 0 10px 0 #505050;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.proj:hover {
+    transform: scale(1.025);
+    transition: 0.25s;
+    box-shadow: 0 0px 30px 0px grey;
+}
+
+.container {
+    box-shadow: 0 0 20px 0 dimgray;
+    display: flex;
+    max-width: 1000px;
+    margin: 100px auto;
+    border-radius: 20px/20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+@media only screen and (max-width:780px) {
+    .container {
+        flex-flow: column;
+    }
+    .proj {
+        width: -webkit-fill-available;
+    }
+}
+
+#comp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#comp img {
+    margin: 10px;
+}
+
+#about p {
+    text-align: justify;
+}
+
+#about ul {
+    list-style-type: lower-greek;
+    text-align: justify;
+    margin-left: 15%;
 }
