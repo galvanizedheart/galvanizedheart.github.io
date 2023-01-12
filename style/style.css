@@ -32,7 +32,8 @@ nav {
     padding: 10px;
 }
 
-nav button {
+nav button,
+.link {
     font-family: 'Sofia Sans', sans-serif;
     border: none;
     cursor: pointer;
@@ -45,7 +46,8 @@ nav button {
     transition: 0.2s;
 }
 
-nav button:hover {
+nav button:hover,
+.link:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px 0px dimgray;
     background-color: black;
@@ -148,11 +150,11 @@ nav button:hover {
     margin: 10px;
 }
 
-#about p {
+#bigpage p {
     text-align: justify;
 }
 
-#about ul {
+#bigpage ul {
     list-style-type: lower-greek;
     text-align: justify;
     margin-left: 15%;
