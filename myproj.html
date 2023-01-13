@@ -13,14 +13,17 @@
 </head>
 
 <body>
+    <script>
+        const search = new URLSearchParams(window.location.search);
+        const param = search.get("pag");
+    </script>
     <header class="stylish">
         <h1>~~~Galvanizedheart's Home Page~~~</h1>
         <hr>
         <nav>
-
             <button onclick="location.href='index.html'">Home</button>
-            <button onclick="location.href='myproj.html'">My Projects</button>
-            <button onclick="location.href='blog.html'">Blog</button>
+            <button onclick="location.href='myproj.html?pag=1'">My Projects</button>
+            <button onclick="location.href='blog.html?pag=1'">Blog</button>
             <button onclick="location.href='about.html'">WhoAmI</button>
         </nav>
     </header>
@@ -40,8 +43,10 @@
 
         </div>
     </main>
+    <div class="stylish m sep" style="margin:4vh auto">
+    </div>
     <script>
-        projects()
+        projects(param);
     </script>
 </body>
 
