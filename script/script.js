@@ -1,5 +1,5 @@
 'use strict';
-const url = 'http://localhost:8000/';
+const url = 'https://nice-blue-starfish-robe.cyclic.app/';
 
 function article(param) {
 
@@ -27,6 +27,7 @@ function blog(sel, param) {
         console.log(res);
         popBlog(res);
     }).fail(function(res) {
+        console.log(res);
         if (res.status == 0) {
             document.getElementsByTagName("article")[0].innerHTML = "<h2>Nothing here!</h2><p>The server might be down.</p>"
         } else if (res.status == 404) {
