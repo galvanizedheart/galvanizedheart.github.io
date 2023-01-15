@@ -123,23 +123,8 @@ function popProj(res, param) {
 
         main.appendChild(art);
     }
-    if (res[1].N != 0) {
-        const bar = document.getElementsByClassName("stylish m sep")[1];
-        for (let i = 1; i <= res[1].N; i++) {
-            let but = document.createElement("button");
-            but.setAttribute("class", "link");
-            if (i == param) {
-                but.style.backgroundColor = "black";
-                but.style.boxShadow = "0 0 15px 0px dimgray";
-                but.style.color = "white";
-                but.style.transform = "scale(1.05)";
-            } else {
-                but.setAttribute("onclick", "location.href='myproj.html?pag=" + i + "'");
-            }
-            but.innerHTML = i;
-            bar.appendChild(but);
-        }
-    }
+    pageButtons("myproj");
+
 }
 
 function popBlog(res) {
@@ -163,6 +148,10 @@ function popBlog(res) {
 
         main.appendChild(art);
     }
+    pageButtons("blog");
+}
+
+function pageButtons(page) {
     if (res[1].N != 0) {
         const bar = document.getElementsByClassName("stylish m sep")[1];
         for (let i = 1; i <= res[1].N; i++) {
@@ -174,10 +163,15 @@ function popBlog(res) {
                 but.style.color = "white";
                 but.style.transform = "scale(1.05)";
             } else {
-                but.setAttribute("onclick", "location.href='blog.html?pag=" + i + "'");
+                but.setAttribute("onclick", "location.href='" + page + ".html?pag=" + i + "'");
             }
             but.innerHTML = i;
             bar.appendChild(but);
         }
+    } else if (res[1].N == 1) {
+        let but = document.createElement("button");
+        but.setAttribute("class", "link");
+        but.innerHTML = i;
+        bar.appendChild(but);
     }
 }
