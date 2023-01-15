@@ -123,7 +123,7 @@ function popProj(res, param) {
 
         main.appendChild(art);
     }
-    pageButtons("myproj");
+    pageButtons("myproj", res);
 
 }
 
@@ -148,10 +148,10 @@ function popBlog(res) {
 
         main.appendChild(art);
     }
-    pageButtons("blog");
+    pageButtons("blog", res);
 }
 
-function pageButtons(page) {
+function pageButtons(page, res) {
     if (res[1].N != 0) {
         const bar = document.getElementsByClassName("stylish m sep")[1];
         for (let i = 1; i <= res[1].N; i++) {
