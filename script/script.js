@@ -1,8 +1,12 @@
 "use strict";
 const url = "https://nice-blue-starfish-robe.cyclic.app/";
 
-function article(e) { $.ajax({ url: url + "article?p=" + e, method: "GET", timeout: 0 }).done(function(e) { console.log(url + "article?p=" + e);
-        popArticle(e) }).fail(function(e) {}) }
+function article(e) {
+    $.ajax({ url: url + "article?p=" + e, method: "GET", timeout: 0 }).done(function(e) {
+        console.log(url + "article?p=" + e);
+        popArticle(e)
+    }).fail(function(e) {})
+}
 
 function blog(e, t) {
     $.ajax({ url: url + "blogposts?p=" + e + "&pag=" + t, method: "GET", timeout: 0 }).done(function(e) { popBlog(e) }).fail(function(e) {
@@ -69,7 +73,7 @@ function popBlog(e) {
         let i = document.createElement("h1"),
             a = document.createElement("p"),
             r = document.createElement("p");
-        r.setAttribute("class", "date"), r.innerHTML = e[0][n].DATETAG.substring(0, 10), i.innerHTML = e[0][n].TITLE + "...", a.innerHTML = e[0][n].BODY + "...", l.appendChild(i), l.appendChild(a), l.appendChild(r), l.setAttribute("onclick", "location.href='article.html?p=" + e[0][n].ID + "'"), t.appendChild(l)
+        r.setAttribute("class", "date"), r.innerHTML = e[0][n].DATETAG.substring(0, 10), i.innerHTML = e[0][n].TITLE + "...", a.innerHTML = e[0][n].BODY + "...", l.appendChild(i), l.appendChild(a), l.appendChild(r), l.setAttribute("onclick", "location.href='article.html?art=" + e[0][n].ID + "'"), t.appendChild(l)
     }
     pageButtons("blog", e)
 }
