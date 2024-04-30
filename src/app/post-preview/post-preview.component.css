@@ -48,7 +48,6 @@ article h1:first-child {
 
 .content-wrapper:hover .overlay {
   background-color: rgba(0, 0, 0, 0.7);
-  /*background-image: none;*/
   transition: opacity 0.25s;
   opacity: 1;
 }

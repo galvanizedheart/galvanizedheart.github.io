@@ -2,7 +2,7 @@
     <h1 id="title" [innerText]="title"></h1>
     <div class="content-wrapper">
         <div class="content">
-            <div class="overlay">
+            <div class="overlay" (click)="navToPost()">
                 <h1>FULL ARTICLE</h1>
             </div>
             <h2 id="subtitle" [innerText]="subtitle"></h2>
