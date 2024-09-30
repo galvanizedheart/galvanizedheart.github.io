@@ -38,8 +38,7 @@ jobs:
 
       - name: Remove existing files
         run: |
-          rm -rf ./*
-          rm -rf ./.*
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           git add .
           git commit -m "Clean main branch"
 
