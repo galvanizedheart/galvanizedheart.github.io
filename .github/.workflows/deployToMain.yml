@@ -1,0 +1,54 @@
+name: Build and Deploy Angular App to main branch
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Build Angular app
+        run: ng build --prod
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Remove existing files
+        run: |
+          rm -rf ./*
+          rm -rf ./.*
+          git add .
+          git commit -m "Clean main branch"
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          folder: dist/concept
+          branch: main
