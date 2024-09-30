@@ -38,6 +38,8 @@ jobs:
 
       - name: Remove existing files
         run: |
+          git config --global user.email "andreadistefano98@gmail.com"
+          git config --global user.name "galvanizedheart"
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           git add .
           git commit -m "Clean main branch"
