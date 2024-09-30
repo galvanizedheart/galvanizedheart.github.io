@@ -33,4 +33,4 @@ jobs:
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           git add ./dist/concept/
           git commit -m 'Deploy to main branch'
-          git push origin `git subtree split --prefix ./dist/concept/ develop`:main --force
+          git push origin main
