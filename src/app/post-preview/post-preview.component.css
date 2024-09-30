@@ -5,6 +5,10 @@ article {
   transform: skew(0deg, 5deg);
 }
 
+img{
+  display: none;
+}
+
 article h1:first-child {
   -webkit-user-select: none;
   /* Safari */
@@ -14,6 +18,8 @@ article h1:first-child {
   /* Standard syntax */
   margin-top: 0;
 }
+
+
 
 .overlay {
   transition: opacity 0.25s;

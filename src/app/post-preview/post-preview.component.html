@@ -2,7 +2,7 @@
     <h1 id="title" [innerText]="title"></h1>
     <div class="content-wrapper">
         <div class="content">
-            <div class="overlay">
+            <div (click)="goToArticle()" id='ovrly' class="overlay">
                 <h1>FULL ARTICLE</h1>
             </div>
             <h2 id="subtitle" [innerText]="subtitle"></h2>
@@ -11,5 +11,5 @@
             </div>
         </div>
     </div>
-    <h6 class="timestamp">01/01/2000</h6>
+    <h6 id='tmstmp' class="timestamp"></h6>
 </article>

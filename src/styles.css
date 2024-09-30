@@ -13,6 +13,12 @@
 
 }
 
+article img{
+  max-width: 90%;
+  display: block;
+  margin: auto;
+}
+
 app-root{
   display: flex;
   flex-direction: column;
