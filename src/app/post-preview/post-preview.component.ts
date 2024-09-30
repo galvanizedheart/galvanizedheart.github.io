@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {Component, Input, input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { marked } from 'marked';
 import  clip  from 'text-clipper';
 import {ActivatedRoute} from "@angular/router";
