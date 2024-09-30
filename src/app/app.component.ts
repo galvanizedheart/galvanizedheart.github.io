@@ -14,4 +14,5 @@ import {FooterComponent} from "./footer/footer.component";
 })
 export class AppComponent {
   title = 'concept';
+  //TODO: change title
 }
