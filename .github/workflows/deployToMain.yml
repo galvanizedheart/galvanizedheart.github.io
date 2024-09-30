@@ -1,9 +1,9 @@
+name: Build and Deploy Angular App
+
 on:
   push:
-    branches: [develop]
-
-permissions:
-  id-token: write  # Ensure this permission is set
+    branches:
+      - develop
 
 jobs:
   build:
@@ -11,60 +11,26 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+        with:
+          ref: develop
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: 'lts/*'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
-
       - name: Build Angular app
-        run: ng build
+        run: npm run build -- --output-path=dist/concept
 
-      - name: List build directory contents
-        run: ls -la dist/concept
-
-  UploadArtifact:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifact
-          path: dist/concept
-
-  deploy:
-    needs: UploadArtifact
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v3
-        with:
-          ref: main
-
-      - name: Remove existing files
+      - name: Deploy to main branch
         run: |
-          git config --global user.email "andreadistefano98@gmail.com"
-          git config --global user.name "galvanizedheart"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-          git add .
-          git commit -m "Clean main branch"
-
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
-        with:
-          github_token: ${{ secrets.DEPLOY_TOKEN }}
-          folder: dist/concept
-          branch: main
+          git add dist/concept
+          git commit -m 'Deploy to main branch'
+          git push origin `git subtree split --prefix dist/concept develop`:main --force
