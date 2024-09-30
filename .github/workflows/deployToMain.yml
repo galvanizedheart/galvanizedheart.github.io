@@ -30,12 +30,6 @@ jobs:
       - name: List build directory contents
         run: ls -la dist/concept
 
-      - name: Upload build artifacts
-          uses: actions/upload-artifact@v3
-          with:
-            name: build-artifact
-            path: dist/concept
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
