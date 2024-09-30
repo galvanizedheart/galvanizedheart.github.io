@@ -32,7 +32,7 @@ jobs:
 
   UploadArtifact:
     needs: build
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
 
     steps:
       - name: Upload build artifacts
