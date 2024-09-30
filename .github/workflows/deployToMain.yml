@@ -1,11 +1,9 @@
-name: Build and Deploy Angular App to main branch
-
 on:
   push:
     branches: [develop]
 
 permissions:
-  id-token: write
+  id-token: write  # Ensure this permission is set
 
 jobs:
   build:
@@ -29,6 +27,9 @@ jobs:
       - name: Build Angular app
         run: ng build
 
+      - name: List build directory contents
+        run: ls -la dist/concept
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -41,8 +42,6 @@ jobs:
 
       - name: Remove existing files
         run: |
-          git config --global user.email "andreadistefano98@gmail.com"
-          git config --global user.name "galvanizedheart"
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           git add .
           git commit -m "Clean main branch"
