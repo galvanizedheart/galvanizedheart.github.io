@@ -1,0 +1,36 @@
+footer{
+  box-shadow: 0px 20px 0 10px white;
+  position: relative;
+  background-color: var(--keyColor);
+  transform: skew(10deg,5deg);
+  /*transform: skewX(2deg);*/
+  margin: auto;
+  z-index: 0;
+  display: inline-block;
+  padding: 5em;
+  width: 70%;
+  top:6em;
+
+}
+
+.foot{
+  transform: skewY(0deg);
+}
+
+footer::after{
+  box-shadow: 15px 20px 0 0 white;
+  padding: 5em;
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 80%;
+  height: 10em;
+  top: 1em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #ED213A;
+  transform: skew(-35deg, -10deg);
+  margin: auto;
+}

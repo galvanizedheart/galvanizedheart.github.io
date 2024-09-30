@@ -1,0 +1,6 @@
+app-footer{
+  display: flex;
+  margin: 5% auto 0;
+  overflow: hidden;
+  width:-webkit-fill-available;
+}
