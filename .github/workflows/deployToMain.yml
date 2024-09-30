@@ -42,7 +42,7 @@ jobs:
           path: dist/concept
 
   deploy:
-    needs: build
+    needs: UploadArtifact
     runs-on: ubuntu-latest
 
     steps:
