@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {NgForOf} from "@angular/common";
 import {PostPreviewComponent} from "../post-preview/post-preview.component";
 import {FileService} from "../file.service";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-all-posts-view',

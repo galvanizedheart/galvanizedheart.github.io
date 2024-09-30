@@ -1,14 +1,12 @@
 import {Injectable, NgModule} from '@angular/core';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import {Observable} from "rxjs";
 
 
 @Injectable({
   providedIn: 'root'
 })
-@NgModule({
-  imports:[HttpClientModule]
-})
+@NgModule({ imports: [], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class FileService {
 
   constructor(private http: HttpClient){}
