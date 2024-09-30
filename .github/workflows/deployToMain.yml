@@ -29,5 +29,8 @@ jobs:
       - name: Install Angular DevKit
         run: npm install --save-dev @angular-devkit/build-angular --legacy-peer-deps
 
+      - name: Install Angular Pages
+        run: ng add angular-cli-ghpages
+
       - name: Deploy to production
         run: ng build --configuration-production --base-href https://galvanizedheart.github.io/
