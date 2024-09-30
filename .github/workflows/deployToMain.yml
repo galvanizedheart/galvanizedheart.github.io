@@ -21,13 +21,13 @@ jobs:
           node-version: 'lts/*'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli
 
       - name: Install Angular DevKit
-        run: npm install --save-dev @angular-devkit/build-angular --legacy-peer-deps
+        run: npm install --save-dev @angular-devkit/build-angular
 
       - name: Install Angular Pages
         run: ng add angular-cli-ghpages --skip-confirmation
