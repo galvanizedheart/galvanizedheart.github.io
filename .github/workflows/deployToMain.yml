@@ -22,9 +22,3 @@ jobs:
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli
-
-      - name: Install Angular CLI
-        run: npm install --save-dev @angular-devkit/build-angular
-
-      - name: Build Angular app
-        run: ng build --configuration-production --base-href https://galvanizedheart.github.io/
