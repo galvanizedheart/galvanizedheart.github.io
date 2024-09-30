@@ -21,16 +21,16 @@ jobs:
           node-version: 'lts/*'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli
 
       - name: Install Angular DevKit
-        run: npm install --save-dev @angular-devkit/build-angular
+        run: npm install --save-dev @angular-devkit/build-angular --legacy-peer-deps
 
       - name: Install Angular Pages
-        run: ng add angular-cli-ghpages --skip-confirmation
+        run: ng add angular-cli-ghpages --legacy-peer-deps --skip-confirmation
 
       - name: Deploy to production
         run: ng build --configuration-production --base-href https://galvanizedheart.github.io/
