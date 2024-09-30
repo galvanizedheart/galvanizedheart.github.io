@@ -5,6 +5,10 @@ article {
   transform: skew(0deg, 5deg);
 }
 
+img{
+  display: none;
+}
+
 article h1:first-child {
   -webkit-user-select: none;
   /* Safari */
@@ -14,6 +18,8 @@ article h1:first-child {
   /* Standard syntax */
   margin-top: 0;
 }
+
+
 
 .overlay {
   transition: opacity 0.25s;
@@ -48,7 +54,6 @@ article h1:first-child {
 
 .content-wrapper:hover .overlay {
   background-color: rgba(0, 0, 0, 0.7);
-  /*background-image: none;*/
   transition: opacity 0.25s;
   opacity: 1;
 }
@@ -63,7 +68,6 @@ article {
   margin-top: 15%;
   padding: 45px 20px 10px 10px;
   font-size: 20px;
-  position: relative;
   color: #FFF;
   background: var(--keyColor);
 }

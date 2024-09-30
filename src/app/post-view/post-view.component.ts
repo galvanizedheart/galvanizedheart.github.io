@@ -11,5 +11,7 @@ import {PostPreviewComponent} from "../post-preview/post-preview.component";
   styleUrl: './post-view.component.css'
 })
 export class PostViewComponent {
-
+  ngOnInit() {
+    document.location = document.location+'#container';
+  }
 }
